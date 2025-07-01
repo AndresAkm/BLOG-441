@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>apliación con Express sencilla</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../assets/css/commons.css">
+    <link rel="stylesheet" href="../assets/css/ejemplo.css">
+</head>
+
+<body>
+
+    <span class="regresar-link d-flex flex-row gap-2">
+        <i class="bi bi-arrow-bar-left"></i>
+        <a class="text-reset" href="./npm.html"> Regresar </a>
+    </span>
+
+
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+
+        <header class="d-flex flex-column justify-content-center align-items-center gap-2 mb-5 mx-4">
+            <div>
+                <h1 class="main-title text-center">
+                    aplicación sencilla con <span>express</span>
+                </h1>
+            </div>
+            <div class="icon-container">
+                <img class="icons" src="../assets/icons/expressjs_dark.svg" alt="Icono de Node.JS">
+            </div>
+        </header>
+
+        <main>
+            <section class="d-flex flex-column gap-5">
+                <article class="d-flex flex-column gap-4 articles-container">
+                    <h4>1. ¿Qué es el archivo package.json?</h4>
+                    <p>El archivo <span>package.json</span> es el corazón de cualquier proyecto Node.js o JavaScript
+                        moderno. Sirve como una especie de testamento que describe la configuración, dependencias,
+                        scripts y metadata de un proyecto.</p>
+                    <img class="align-self-center" style="width: 250px; height: auto; aspect-ratio: 16 / 9;"
+                        src="../assets/icons/json-schema.svg" alt="Icono de la estructura JSON">
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="d-flex flex-column gap-4 articles-container">
+                    <h4>2. ¿Qué contiene un archivo package.json y qué le podemos modificar?</h4>
+
+                    <div class="d-flex flex-row gap-5">
+                        <div class="w-50 d-flex flex-column gap-3">
+                            <h5>- Contenido típico del package.json</h5>
+                            <ul class="mb-0">
+                                <li><span>name:</span> nombre del proyecto</li>
+                                <li><span>version:</span> número de versión actual</li>
+                                <li><span>description:</span> pequeña descripción del propósito del proyecto</li>
+                                <li><span>scripts:</span> comandos personalizados como <code>start</code> o
+                                    <code>test</code>
+                                </li>
+                                <li><span>dependencies:</span> módulos necesarios para producción</li>
+                                <li><span>devDependencies:</span> módulos necesarios solo en desarrollo</li>
+                            </ul>
+                        </div>
+
+                        <div class="w-50 d-flex flex-column gap-3">
+                            <h5>- ¿Qué podemos modificar?</h5>
+                            <ul class="mb-0">
+                                <li><span>keywords:</span> términos para facilitar búsquedas en NPM</li>
+                                <li><span>author:</span> nombre del desarrollador o equipo</li>
+                                <li><span>license:</span> tipo de licencia del proyecto</li>
+                                <li><span>main:</span> archivo de entrada principal (por ejemplo: <code>index.js</code>)
+                                </li>
+                                <li><span>scripts:</span> puedes crear comandos como <code>dev</code>,
+                                    <code>build</code>, etc.
+                                </li>
+                                <li><span>engines:</span> versión mínima de Node.js requerida</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p><span class="span-alert">💡</span> El <code>package.json</code> es importantisimo en
+                            proyectos
+                            Node.js: configura, automatiza y define dependencias clave.</p>
+                    </div>
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="d-flex flex-column gap-4 articles-container">
+
+                    <h4 class="mb-3">3. Aplicación sencilla paso a paso con express.js</h4>
+
+                    <p class="mb-3">
+                        Para crear tu aplicación con <span>express</span> primero debemos crear nuestro archivo
+                        <span>package.json</span> con el siguiente comando:
+                    </p>
+
+                    <div class="code-block p-3 mb-4"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>npm init</code>
+                    </div>
+
+                    <p class="mb-3">
+                        También podemos usar <span>-y</span> para crearlo directamente sin preguntas de configuración:
+                    </p>
+
+                    <div class="code-block p-3 mb-4"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>npm init -y</code>
+                    </div>
+
+                    <h5 class="mt-4 mb-3">Paso 1: Instalar dependencias</h5>
+
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>npm install express</code>
+                    </div>
+
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>npm install --save-dev nodemon</code>
+                    </div>
+
+                    <p class="small mb-4">💡 <span>Nota:</span> Usaremos <span>nodemon</span> para reinicios automáticos
+                        al detectar cambios.</p>
+
+                    <h5 class="mb-3">Paso 2: Crear archivo principal del servidor</h5>
+                    <p class="mb-3">Usualmente se llama <span>index.js</span> o <span>app.js</span> y se ubica en la
+                        raíz del proyecto.</p>
+
+                    <h5 class="mb-3">Paso 3: Configurar <span>package.json</span></h5>
+                    <p class="mb-3">Agregamos un script que utilice <span>nodemon</span> para desarrollo:</p>
+
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>
+      "scripts": {<br>
+        &nbsp;&nbsp;"test": "echo \"Error: no test specified\" && exit 1",<br>
+        &nbsp;&nbsp;"dev": "nodemon index"<br>
+      }
+    </code>
+                    </div>
+
+                    <h5 class="mb-3">Paso 4: Importar express y crear instancia</h5>
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>const exp = require('express')<br>const app = exp()</code>
+                    </div>
+
+                    <h5 class="mb-3">Paso 5: Asignar puerto local</h5>
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>const PORT = 8000</code>
+                    </div>
+
+                    <p class="small mb-3">💡 <span>Nota:</span> Si el puerto está ocupado, prueba con otro entre el 8000
+                        y el 9000.</p>
+
+                    <h5 class="mb-3">Paso 6: Activar el servidor</h5>
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>
+      app.listen(PORT, () => {<br>
+        &nbsp;&nbsp;console.log(`Servidor escuchando en el puerto ${PORT}... http://localhost:${PORT}/`)<br>
+      })
+    </code>
+                    </div>
+
+                    <ul class="mb-2">
+                        <li><span>app</span>: instancia de Express</li>
+                        <li><span>PORT</span>: puerto configurado</li>
+                        <li><span>listen</span>: método que inicia escucha</li>
+                        <li><span>() => { ... }</span>: función que se ejecuta cuando arranca el servidor</li>
+                    </ul>
+
+                    <p>Te debería de aparecer algo como esto</p>
+
+                    <img class="img-download-ejemplo" src="../assets/img/resultado-servidor.png"
+                            alt="Imagen del resultado de la inicialización del servidor">
+
+                    <h5 class="mb-3">Paso 7: Ejecutar el servidor</h5>
+                    <div class="code-block p-3 mb-4"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>npm run dev</code>
+                    </div>
+
+                    <p>Ya tenemos nuestro servidor listo, podemos hacer nuestra primera pequeña peticion, pero primero conozcamos que es el protócolo HTTP</p>
+
+                </article>
+                <article class="d-flex flex-column gap-4 articles-container">
+                    <h5 class="mb-3">4. ¿Qué es el protocolo HTTP?</h5>
+                    <p class="mb-2"><span>HTTP</span> permite que el navegador se comunique con un servidor web.</p>
+
+                    <img class="img-download-ejemplo p-4" src="../assets/img/cliente-servidor.png"
+                            alt="Imagen ejemplo del modelo cliente-servidor">
+                    <ul class="mb-3">
+
+                        <li><span>Cliente</span>: solicita recursos</li>
+                        <li><span>Servidor</span>: responde con datos o contenido</li>
+                        <li><span>APIs</span>: usan herramientas como <span>Postman</span> o <span>Insomnia</span> para
+                            intercambiar <span>JSON</span></li>
+                    </ul>
+
+                    <p class="mb-2">Métodos más comunes:</p>
+                    <ul class="mb-4">
+                        <li><span>GET</span>: obtener datos</li>
+                        <li><span>POST</span>: enviar nuevos datos</li>
+                        <li><span>PUT</span>: actualizar existentes</li>
+                        <li><span>DELETE</span>: eliminar recursos</li>
+                    </ul>
+                </article>
+
+                <article class="d-flex flex-column gap-4 articles-container">
+                    <h5 class="mb-3">5. Primera petición al servidor</h5>
+                    <p class="mb-2">Creamos una ruta tipo <span>GET</span> que devuelve un saludo:</p>
+
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>
+      app.get('/saludo', (req, res) => {<br>
+        &nbsp;&nbsp;res.send('&lt;h1&gt;Hola, bienvenido a la ruta /saludo&lt;/h1&gt;')<br>
+      })
+    </code>
+                    </div>
+
+                    <ul class="mb-2">
+                        <li><span>req</span>: lleva la solicitud</li>
+                        <li><span>res</span>: envía la respuesta</li>
+                    </ul>
+
+                    <p class="small mb-3">💡 <span>Nota:</span> En este caso solo usaremos <span>res</span> dentro de la función, debido a que no se está solicitando una petición con cuerpo (<span>body</span>)</p>
+
+                    <p>Te debería de aparecer algo como esto</p>
+
+                    <img class="img-download-ejemplo" src="../assets/img/resultado-navegador.png"
+                            alt="Imagen del resultado final en el navegador">
+
+                    <div class="alert alert-success p-3 mb-4"
+                        style="background: rgba(0,255,0,0.1); border: 1px solid rgba(0,255,0,0.3); border-radius: 6px;">
+                        <p class="mb-0">
+                            <span>¡Perfecto!</span> Ya tienes tu servidor Express funcionando con una ruta básica.
+                        </p>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+        <footer class="d-flex justify-content-end mt-4">
+            <button onclick="window.location.href='../index.html'" style="all: unset">
+                <div class="d-flex align-items-center gap-3 next-container glitch-container">
+                    <p> Inicio >></p>
+                </div>
+            </button>
+        </footer>
+    </div>
+
+    <script src="../assets/scripts/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
