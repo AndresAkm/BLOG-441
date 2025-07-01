@@ -1,100 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APIREST-FULL con Node.js y Express</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="../css/index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de desarrollo web</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/index.css">
+    <link rel="stylesheet" href="../assets/css/commons.css">
+    
 </head>
-
-<body>
-
-    <div id="contenedor-principal" class="container mt-5">
-
-        <header class="mb-3">
-            <div>
-                <h1 class="text-center">
-                    Documentación paso a paso para el desarrollo de una <span>API REST-FULL</span> con
-                    <span>Node.JS</span> y <span>Express.JS</span>
-                </h1>
+<body">
+    <div class="particles" id="particles"></div>
+    
+    <div class="container-index">
+        <header class="header-section">
+            <div class="title-container">
+                <h1 class="main-title">Blog de Desarrollo Web</h1>
+                <p class="subtitle">ADSO • 441</p>
+                <div class="code-line">
+                    <span class="comment">// Explorando el mundo del desarrollo backend</span><br>
+                    <span class="keyword">const</span> knowledge = <span class="keyword">await</span> explore(<span style="color: #98c379;">'web-development'</span>);
+                </div>
             </div>
         </header>
 
-        <main>
+        <main class="blogs-section">
+            <a href="./nodejs.html">
+                <article class="blog-card" onclick="navigateTo('nodejs')">
+                <i class="bi bi-server blog-icon"></i>
+                <h2 class="blog-title">Node.js</h2>
+                <p class="blog-description">
+                    En esta entrada exploraremos conceptos claves sobre Node.js. Aprenderás qué es, a cómo instalarlo, configurar módulos y aprovechar su ecosistema.
+                </p>
+                <div class="blog-tech">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Express</span>
+                    <span class="tech-tag">MongoDB</span>
+                </div>
+                <span class="blog-link">EXPLORAR NODEJS →</span>
+            </article>
+            </a>
 
-            <div class="d-flex justify-content-end mb-3">
-                <button class="desplegable-button" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse_conceptos" aria-expanded="false" aria-controls="collapseConceptos">
-                    Leer conceptos <i class="bi bi-arrow-down"></i>
-                </button>
-            </div>
-
-            <section class="collapse" id="collapse_conceptos">
-                <article class="mb-2 d-flex flex-column gap-2 card card-body">
-                    <h3>¿Qué es una API?</h3>
-                    <p>
-                        Una <span>API</span> (aplication programming interface) es un
-                        software que permite la comunicación entre sistemas por medio de
-                        reglas y protocolos. Funciona como un intermediario en el
-                        intercambio de datos y servicios entre aplicaciones.
-                    </p>
+            <a href="./apirest.html">
+                <article class="blog-card" onclick="navigateTo('apirest')">
+                <i class="bi bi-diagram-3 blog-icon"></i>
+                <h2 class="blog-title">API RESTful</h2>
+                <p class="blog-description">
+                    En esta entrada aprenderás a como implementar la arquitectura REST desde cero para desarrollar una API RESTful paso a paso con Node.js y Express.
+                </p>
+                <div class="blog-tech">
+                    <span class="tech-tag">REST</span>
+                    <span class="tech-tag">HTTP</span>
+                    <span class="tech-tag">JSON</span>
+                </div>
+                <span class="blog-link">EXPLORAR RESTful →</span>
                 </article>
-
-                <article class="mb-2 d-flex flex-column gap-2 card card-body">
-                    <h3>¿Qué es REST?</h3>
-                    <p>
-                        <span>REST</span> es un tipo de arquitectura (la más importante) en
-                        el mundo del desarrollo web. Se cimenta en el
-                        <span>prótocolo HTTP</span>, y constituye la web.
-                    </p>
-                </article>
-
-                <article class="mb-2 d-flex flex-column gap-2 card card-body">
-                    <h3>¿Qué es REST-FULL?</h3>
-                    <p>
-                        <span>REST-FULL</span> no es mas que la aplicación de la
-                        arquitectura <span>REST</span> a un proyecto web, construir con base
-                        en eso.
-                    </p>
-                    <div>
-                        En resumen, una <span>API RESTFULL</span> es un software que permite
-                        la conexión entre apliaciones usando la arquitectura REST en su
-                        construcción.
-                    </div>
-                </article>
-                <article class="mb-4 d-flex flex-column gap-2 card card-body">
-                    <h3>¿Qué es Node.JS y Express?</h3>
-                    <p>
-                        <span>Node.JS</span> es un entorno de ejecución para Javascript
-                        basado en el motor V8 de Google para ejecutar código Javascript
-                        desde el lado del servidor; <span>backend</span>, y para ello, con
-                        la ayuda de <span>Express</span>, un framework de Node.JS que
-                        facilita todo el proceso de la construccioń de servidores (APIS), en
-                        conjunto crean soluciones robustas en el desarrollo de aplicativos
-                        web.
-                    </p>
-                </article>
-            </section>
-
-            <section>
-                <article>
-                    <h4>1. Primer paso para la creación de una API REST-FULL</h4>
-                </article>
-            </section>
+            </a>
 
         </main>
-        <footer>
 
+        <footer class="terminal-footer">
+            <p><span class="terminal-prompt">echo</span> "bienvenido" > welcome.txt</p>
+            <p>¡Bienvenido a mi blog sobre desarrollo web!</p>
         </footer>
     </div>
+    <script src="../assets/scripts/particles.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
-        crossorigin="anonymous"></script>
 </body>
-
 </html>

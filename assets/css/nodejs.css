@@ -1,0 +1,45 @@
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-download-node {
+    width: 500px;
+    height: auto;
+    object-fit: fill;
+    align-self: center;
+    margin: 40px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.next-container {
+    background: transparent;
+    width: fit-content;
+    color: rgb(255, 217, 217);
+    border: 1px solid #f63b3b;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glitch-container {
+    animation: glitch-pulse 3s infinite;
+}
+
+.glitch-container:hover {
+    background: rgba(246, 59, 59, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}

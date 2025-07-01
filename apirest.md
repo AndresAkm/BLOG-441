@@ -1,5 +1,3 @@
-Paso a paso
-
 Hacer la documentación paso a paso paso para la construcción de una APIREST-FULL
 
 1. Conceptos.
@@ -9,5 +7,4 @@ Hacer la documentación paso a paso paso para la construcción de una APIREST-FU
 - ¿Qué es restfull?
 - ¿Qué es Node.JS y Express?
 
-1. Primer paso para la creación de una apirest-full
-
+1. Primer paso para la creación de una apirest-ful

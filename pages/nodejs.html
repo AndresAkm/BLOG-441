@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node.JS conceptos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../assets/css/commons.css">
+    <link rel="stylesheet" href="../assets/css/nodejs.css">
+</head>
+
+<body>
+    
+    <span class="regresar-link d-flex flex-row gap-2">
+        <i class="bi bi-arrow-bar-left"></i>
+        <a class="text-reset" href="./index.html"> Regresar </a>
+    </span>
+
+
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+
+        <header class="d-flex flex-column justify-content-center align-items-center gap-2 mb-5 mx-4">
+            <div>
+                <h1 class="main-title text-center">
+                    Node.JS - <span>desarrollo web</span>
+                </h1>
+            </div>
+            <div class="icon-container">
+                <img class="icons" src="../assets/icons/nodejs.svg" alt="Icono de Node.JS">
+            </div>
+        </header>
+
+        <main>
+            <section class="d-flex flex-column gap-5">
+                <article class="d-flex flex-column gap-4 articles-container">
+                    <h4>1. ¿Qué es Node.JS?</h4>
+                    <p><span>Node.JS</span> es un entorno de ejecución de Javascript basado en el motor V8 de Google
+                        para ejecutar codigo Javascript fuera del navegador y desde el lado del backend, basado en el
+                        paradigma programación asíncrona.</p>
+                    <img class="align-self-center" style="width: 250px; height: auto; aspect-ratio: 16 / 9;"
+                        src="https://cdn.freebiesupply.com/logos/large/2x/nodejs-1-logo-png-transparent.png"
+                        alt="Icono de node.JS">
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="d-flex flex-column gap-4 articles-container">
+                    <h4>2. ¿Cúal es la diferencia entre JavaScript en el navegador y en el frontend?</h4>
+                    <div class="d-flex flex-row gap-5">
+                        <div class="w-50 d-flex flex-column gap-3">
+                            <h5>
+                                - JavaScript en el navegador
+                            </h5>
+                            <p>Es código que se ejecuta en el <span>navegador del usuario</span> (chrome, safari,
+                                firefox...). Tiene
+                                acceso directo al DOM, window, eventos, etc, todo se ejecuta del lado del cliente
+                            </p>
+                        </div>
+                        <div class="w-50 d-flex flex-column gap-3">
+                            <h5>
+                                - JavaScript en el frontend
+                            </h5>
+                            <p>
+                                Es todo JS que corre del lado del cliente, pero en formas diferentes al navegador,
+                                incluyendo apps, <span>WebViews</span> o <span>frameworks</span> como React, Vue o
+                                Angular.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <p><span class="span-alert">!</span> Todo JavaScript en el navegador es frontend, pero <span
+                                class="span-alert">no</span> todo frontend depende
+                            solo del navegador.</p>
+                    </div>
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="d-flex flex-column gap-4 articles-container">
+                    <h4>3. Ventajas y desventajas del uso de JavaScript en el backend</h4>
+                    <div class="d-flex flex-row gap-5">
+                        <div class="w-50 d-flex flex-column gap-3">
+                            <h5>- Ventajas</h5>
+                            <ul class="mb-0">
+                                <li>Permite usar el mismo lenguaje en frontend y backend (<span>full-stack JS</span>)
+                                </li>
+                                <li>Entorno rápido y eficiente gracias al motor V8</li>
+                                <li>Gran ecosistema de librerías y paquetes (<span>npm</span>)</li>
+                                <li>Ideal para apps en tiempo real con ayuda de <span>WebSockets</span> (chats,
+                                    notificaciones, etc.)</li>
+                            </ul>
+                        </div>
+                        <div class="w-50 d-flex flex-column gap-3">
+                            <h5>- Desventajas</h5>
+                            <ul class="mb-0">
+                                <li><span class="span-alert">Menor</span> rendimiento en tareas altamente
+                                    computacionales.</li>
+                                <li>La asincronía puede <span class="span-alert">dificultar</span> la depuración si no
+                                    se gestiona bien.</li>
+                                <li>Madurez <span class="span-alert">menor</span> en comparación con entornos como Java
+                                    o .NET</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <p><span>💡</span> Node.js es potente para muchos casos, pero como toda herramienta, debe usarse
+                            donde más eficiente sea.</p>
+                    </div>
+                </article>
+
+
+                <div class="line-separate"></div>
+
+                <article class="d-flex flex-column gap-3 articles-container">
+                    <h4>4. ¿Cómo instalar Node.JS?</h4>
+
+                    <p class="mt-3">
+                        Para instalar <span>Node.JS</span> en tu sistema, tienes varias opciones, pero te mostraré la
+                        más sencilla para que puedas tener Node.JS instalado en tu computadora.
+                    </p>
+
+                    <h5 class="mt-3">Descarga directa</h5>
+
+                    <div class="d-flex flex-column gap-2">
+                        <p><strong>Paso 1:</strong> Ve al sitio oficial de Node.js</p>
+                        <p>Dirígete a <a
+                                href="https://nodejs.org/en/download"><span>https://nodejs.org/en/download</span></a> y
+                            verás dos versiones disponibles:</p>
+                        <ul>
+                            <li><span>LTS (Long Term Support):</span> Versión estable recomendada para la mayoría de
+                                usuarios</li>
+                            <li><span>Current:</span> Versión más reciente con las últimas características</li>
+                        </ul>
+                        <p class="small">💡 <span>Recomendación:</span> Siempre elige la
+                            versión LTS para proyectos de producción.</p>
+
+                        <img class="img-download-node" src="../assets/img/node-versions.png"
+                            alt="Img con las versiones de Node.JS">
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-3">
+                        <p><strong>Paso 2:</strong> Descarga el instalador</p>
+                        <p>Haz clic en el botón de descarga correspondiente a tu sistema operativo:</p>
+                        <ul>
+                            <li><span>Windows:</span> Archivo .msi</li>
+                            <li><span>macOS:</span> Archivo .pkg</li>
+                            <li><span>Linux:</span> Paquete precompilado o código fuente</li>
+                        </ul>
+
+                        <img class="img-download-node" src="../assets/img/node-operative-systems.png"
+                            alt="Opciones de instalacion de Node en diferentes sistemas operativos">
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-3">
+                        <p><strong>Paso 3:</strong> Ejecuta el instalador</p>
+                        <p>Una vez descargado, ejecuta el archivo y sigue el asistente de instalación:</p>
+                        <img class="img-download-node" src="../assets/img/node-asistent.png"
+                            alt="Asistente de instalación de Node.js mostrando las opciones de configuración">
+
+                        <ul>
+                            <li>Acepta los términos y condiciones</li>
+                            <li>Elige la ubicación de instalación (recomendado: ubicación por defecto)</li>
+                            <li>Asegúrate de que esté marcada la opción <span>"Add to PATH"</span></li>
+                            <li>Completa la instalación</li>
+                        </ul>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-3">
+                        <p><strong>Paso 4:</strong> Comprobar la instalación</p>
+                        <p>Una vez descargado, abriremos una nueva términal (<span>cmd o powershell</span>) y
+                            escribiremos los siguientes comandos.</p>
+
+                        <div class="code-block p-3 my-3"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>node -v</code>
+                        </div>
+                        <p>Luego:</p>
+                        <div class="code-block p-3 my-4"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm -v</code>
+                        </div>
+
+                        <p>Te debería de parecer algo similar a esto:</p>
+
+                        <img class="img-download-node" src="../assets/img/node-console.png"
+                            alt="Resultado en consola de los comandos de Node.JS">
+
+                    </div>
+
+                    <div class="alert alert-success my-3 p-3"
+                        style="background: rgba(0,255,0,0.1); border: 1px solid rgba(0,255,0,0.3); border-radius: 6px;">
+                        <p class="mb-0">
+                            <span>¡Perfecto!</span> Si ves los números de versión, Node.js está correctamente
+                            instalado en tu sistema.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="d-flex flex-column gap-3 articles-container">
+                    <h4>5. Importar y Exportar Módulos en Node.js</h4>
+
+                    <p class="mt-3">
+                        Los <span>módulos</span> son una de las características más importantes de Node.js. Te permiten
+                        organizar tu código
+                        en archivos separados y reutilizar funciones, variables y objetos entre diferentes partes de tu
+                        aplicación.
+                    </p>
+
+                    <h5 class="mt-3">¿Qué son los módulos?</h5>
+
+                    <div class="d-flex flex-column gap-2">
+                        <p>
+                            Un <span>módulo</span> en Node.js es simplemente un archivo JavaScript que puede exportar
+                            funciones,
+                            objetos, variables o clases para ser utilizadas en otros archivos.
+                        </p>
+                        <ul>
+                            <li><span>module.exports:</span> Sintaxis tradicional de Node.js (CommonJS)</li>
+                            <li><span>export/import:</span> Sintaxis moderna de ES6 (ECMAScript Modules)</li>
+                        </ul>
+                        <p class="small">
+                            💡 <span class="span-alert">Nota:</span> En esta guía usaremos la sintaxis CommonJS que es
+                            la más común en Node.js
+                        </p>
+                    </div>
+
+                    <h5 class="mt-4">Ejemplo práctico: Calculadora modular</h5>
+
+                    <div class="d-flex flex-column gap-2">
+                        <p>Vamos a crear una calculadora dividida en módulos para entender mejor el concepto.</p>
+
+                        <p><strong>Paso 1:</strong> Crea la estructura de carpetas</p>
+                        <p>Primero, crea una carpeta llamada <span>"calculadora-modular"</span> y organiza los archivos
+                            (el archivo package.json es un archivo que abordaremos más adelante en el blog, pero puedes
+                            crearlo con el comando <span>"npm init -y"</span>):</p>
+
+                        <div class="code-block p-3 mt-4"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>calculadora-modular/</code><br>
+                            <code>├── operaciones.js    # Módulo con las funciones</code><br>
+                            <code>├── calculadora.js   # Archivo principal</code><br>
+                            <code>└── package.json     # Configuración del proyecto</code>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-4">
+                        <p><strong>Paso 2:</strong> Crea el módulo de operaciones (operaciones.js)</p>
+                        <p>Este archivo contendrá las funciones matemáticas que queremos exportar:</p>
+
+                        <div class="code-block p-3 mb-2 mt-4"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>// operaciones.js</code><br><br>
+                            <code>// Función para sumar dos números</code><br>
+                            <code>function sumar(a, b) {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;return a + b;</code><br>
+                            <code>}</code><br><br>
+                            <code>// Función para restar dos números</code><br>
+                            <code>function restar(a, b) {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;return a - b;</code><br>
+                            <code>}</code><br><br>
+                            <code>// Función para multiplicar dos números</code><br>
+                            <code>function multiplicar(a, b) {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;return a * b;</code><br>
+                            <code>}</code><br><br>
+                            <code>// Función para dividir dos números</code><br>
+                            <code>function dividir(a, b) {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;if (b === 0) {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw new Error('No se puede dividir por cero');</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;}</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;return a / b;</code><br>
+                            <code>}</code><br><br>
+                            <code>// Variable constante</code><br>
+                            <code>const PI = 3.14159;</code><br><br>
+                            <code>// EXPORTAR las funciones y variables</code><br>
+                            <code>module.exports = {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;sumar,</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;restar,</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;multiplicar,</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;dividir,</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;PI</code><br>
+                            <code>};</code>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-3">
+                        <p><strong>Paso 3:</strong> Formas alternativas de exportar</p>
+                        <p>Node.js te ofrece diferentes maneras de exportar. Aquí algunas alternativas:</p>
+
+                        <p><span>Opción A:</span> Exportar individual</p>
+                        <div class="code-block p-3 my-4"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>// Al final de cada función</code><br>
+                            <code>module.exports.sumar = sumar;</code><br>
+                            <code>module.exports.restar = restar;</code><br>
+                            <code>module.exports.PI = PI;</code>
+                        </div>
+
+                        <p><span>Opción B:</span> Exportar directo</p>
+                        <div class="code-block p-3 mb-2 mt-4"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>// Directamente en la declaración</code><br>
+                            <code>exports.sumar = function(a, b) {</code><br>
+                            <code>&nbsp;&nbsp;&nbsp;&nbsp;return a + b;</code><br>
+                            <code>};</code>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-3">
+                        <p><strong>Paso 4:</strong> Crea el archivo principal (calculadora.js)</p>
+                        <p>Ahora vamos a <span>importar</span> y usar las funciones del módulo operaciones:</p>
+
+                        <div class="code-block p-3 mb-2 mt-4"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>// calculadora.js</code><br><br>
+                            <code>// IMPORTAR el módulo completo</code><br>
+                            <code>const operaciones = require('./operaciones');</code><br><br>
+                            <code>// Usar las funciones importadas</code><br>
+                            <code>console.log('=== CALCULADORA MODULAR ===');</code><br>
+                            <code>console.log(`Suma: 5 + 3 = ${operaciones.sumar(5, 3)}`);</code><br>
+                            <code>console.log(`Resta: 10 - 4 = ${operaciones.restar(10, 4)}`);</code><br>
+                            <code>console.log(`Multiplicación: 6 * 7 = ${operaciones.multiplicar(6, 7)}`);</code><br>
+                            <code>console.log(`División: 15 / 3 = ${operaciones.dividir(15, 3)}`);</code><br>
+                            <code>console.log(`Valor de PI: ${operaciones.PI}`);</code>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-3">
+                        <p><strong>Paso 5:</strong> Formas alternativas de importar</p>
+                        <p>También puedes importar elementos específicos usando <span>destructuring</span>:</p>
+
+                        <div class="code-block p-3 mb-2 mt-4"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>// Importar funciones específicas</code><br>
+                            <code>const { sumar, restar, PI } = require('./operaciones');</code><br><br>
+                            <code>// Ahora puedes usarlas directamente</code><br>
+                            <code>console.log(`Suma: ${sumar(8, 2)}`);</code><br>
+                            <code>console.log(`Resta: ${restar(10, 3)}`);</code><br>
+                            <code>console.log(`PI: ${PI}`);</code>
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex flex-column gap-2 mt-3">
+                        <p><strong>Paso 6:</strong> Ejecuta el programa</p>
+                        <p>Guarda ambos archivos y ejecuta el programa desde la terminal:</p>
+
+                        <div class="code-block p-3 my-4"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>cd calculadora-modular</code><br>
+                            <code>node calculadora.js</code>
+                        </div>
+
+                        <p>Al ejecutar, la terminal debería de mostrarte algo como esto:</p>
+
+                        <img style="width: 700px;" class="img-download-node" src="../assets/img/node-example-result.png"
+                            alt="Terminal mostrando la ejecución del programa y los resultados de las operaciones matemáticas">
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="d-flex justify-content-end mt-4">
+            <button onclick="window.location.href='./npm.html'" style="all: unset">
+                <div class="d-flex align-items-center gap-3 next-container glitch-container">
+                    <p> Next >></p>
+                    <div class="icon-container">
+                        <img class="icons" src="../assets/icons/npm.svg" alt="Icono de npm">
+                    </div>
+                </div>
+            </button>
+        </footer>
+    </div>
+
+    <script src="../assets/scripts/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

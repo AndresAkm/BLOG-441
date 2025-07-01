@@ -1,0 +1,366 @@
+/* Colors */
+
+:root {
+    --span-color: rgb(122, 224, 255);
+    --h-color: rgb(227, 241, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: content-box;
+    color: white;
+}
+
+body {
+    background: linear-gradient(135deg, rgb(26, 26, 26) 0%, rgb(35, 35, 45) 100%);
+    min-height: 100vh;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    animation: load 150ms ease-in-out
+}
+
+footer {
+    width: 100%;
+}
+
+span {
+    color: var(--span-color);
+    transition: all 150ms ease-in;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+p {
+    margin: 0;
+    font-size: large;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    color: var(--h-color);
+    margin: 0;
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.712);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    margin-bottom: 8px;
+}
+
+.span-alert {
+    color: rgb(255, 50, 50);
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.712);
+}
+
+.regresar-link {
+    position: fixed;
+    top: 2%;
+    left: 2%;
+    z-index: 100;
+}
+
+.container-index {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-top: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-weight: 700;
+    color: var(--h-color);
+    text-shadow: 0 0 20px var(--accent-glow);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.main-title::before {
+    content: '< ';
+    color: var(--span-color);
+    animation: blink 2s infinite;
+}
+
+.main-title::after {
+    content: ' />';
+    color: var(--span-color);
+    animation: blink 2s infinite reverse;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--span-color);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 6s infinite ease-in-out;
+}
+
+.blog-card {
+    background: rgba(65, 65, 65, 0.8);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.blog-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(122, 224, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.blog-card:hover::before {
+    left: 100%;
+}
+
+.blog-card:hover {
+    background: rgba(121, 121, 121, 0.877);
+    border-color: var(--span-color);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(122, 224, 255, 0.2);
+}
+
+.articles-container {
+    border: 1px solid rgba(255, 255, 255, 0.406);
+    border-radius: 10px;
+    padding: 35px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.54);
+    transition: all 150ms ease-in;
+
+    &:hover {
+        border: 1px solid rgba(255, 255, 255, 1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 1);
+    }
+}
+
+.icon-container {
+    width: 40px;
+    height: 40px
+}
+
+.icons {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    aspect-ratio: 16 / 9;
+    animation: infinite-pulse 2s infinite ease-in-out
+}
+
+.line-separate {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--span-color) 20%,
+        rgba(122, 224, 255, 0.8) 50%,
+        var(--span-color) 80%,
+        transparent 100%
+    );
+    margin: 2rem 0;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(122, 224, 255, 0.3);
+}
+
+.line-separate::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 7px;
+    height: 5px;
+    background: var(--span-color);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--span-color);
+    animation: pulse-dot 2s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 0.7;
+    }
+}
+
+@keyframes slide-line-segment {
+    0% {
+        left: -60px;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        left: calc(100% + 30px);
+        opacity: 0;
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes infinite-row {
+    0% {
+        transform: translateY(0);
+
+    }
+
+    50% {
+        transform: translateY(3px);
+
+    }
+
+    100% {
+        transform: translateY(0);
+
+    }
+}
+
+@keyframes load {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes infinite-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+/* Simple animations */
+@keyframes glitch-pulse {
+
+    0%,
+    95% {
+        opacity: 1;
+    }
+
+    97% {
+        opacity: 0.8;
+    }
+
+    98% {
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes glitch-flicker {
+
+    0%,
+    98% {
+        border-color: #ffe8e8;
+    }
+
+    99% {
+        border-color: #ffd4d4;
+    }
+
+    100% {
+        border-color: #ffadad;
+    }
+}
+
+@keyframes glitch-shake {
+
+    0%,
+    98% {
+        transform: translate(0);
+    }
+
+    99% {
+        transform: translate(-1px, 0);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}

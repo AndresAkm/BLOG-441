@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPM - Node Package Manager</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="../assets/css/commons.css">
+    <link rel="stylesheet" href="../assets/css/npm.css">
+</head>
+
+<body>
+
+    <span class="regresar-link d-flex flex-row gap-2">
+        <i class="bi bi-arrow-bar-left"></i>
+        <a class="text-reset" href="./nodejs.html"> Regresar </a>
+    </span>
+
+    <div id="particles" class="particles"></div>
+
+    <div class="container">
+        <header class="text-center mb-5">
+            <h1 class="main-title">Guía de <span>NPM</span></h1>
+            <div class="icon-container mx-auto mt-3">
+                <img src="../assets/icons/npm.svg" alt="Logo oficial de NPM con letras rojas sobre fondo blanco"
+                    class="icons">
+            </div>
+        </header>
+
+        <main class="w-100">
+            <section class="d-flex flex-column gap-5">
+                <article class="articles-container mb-4">
+                    <h2 class="mb-3">¿Qué es npm? ¿Quiénes son los encargados de mantener npm?</h2>
+                    <div class="d-flex align-items-start mb-3">
+                        <div>
+                            <p class="mb-3"><span>NPM</span> (Node Package Manager) es el gestor de paquetes por defecto
+                                para Node.js. Es una herramienta de línea de comandos que permite a los desarrolladores
+                                instalar, compartir y gestionar dependencias de JavaScript de manera eficiente.</p>
+                            <p>NPM es mantenido por <span>GitHub, Inc.</span> (que a su vez es propiedad de Microsoft)
+                                desde 2020. Anteriormente era mantenido por npm, Inc., una empresa independiente fundada
+                                por Isaac Schlueter, el creador original de npm.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container mb-4">
+
+                    <h2 class="mb-3">¿Qué es yarn y cuál es su diferencia con npm?</h2>
+                    <div class="d-flex align-items-start mb-3">
+                        <div>
+                            <p class="mb-3"><span>Yarn</span> es un gestor de paquetes alternativo para JavaScript,
+                                desarrollado por Facebook (Meta) en 2016. Fue creado para abordar algunas limitaciones
+                                que tenía npm en ese momento.</p>
+                            <h4 class="mb-3">Principales diferencias:</h4>
+                            <ul class="ps-3">
+                                <li><span>Velocidad:</span> Yarn instala paquetes en paralelo, mientras que npm lo hacía
+                                    secuencialmente (aunque esto ha mejorado en versiones recientes)</li>
+                                <li><span>Seguridad:</span> Yarn verifica la integridad de los paquetes usando checksums
+                                </li>
+                                <li><span>Determinismo:</span> Yarn genera un archivo yarn.lock que asegura
+                                    instalaciones consistentes</li>
+                                <li><span>Interfaz:</span> Yarn tiene una salida más limpia y informativa durante la
+                                    instalación</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container">
+                    <h2 class="mb-3 text-white">Diferencias entre yarn.lock y package-lock.json</h2>
+
+                    <p class="mb-4 text-white">
+                        Tanto <span>yarn.lock</span> como <span>package-lock.json</span> son archivos de bloqueo que
+                        garantizan instalaciones consistentes de dependencias, pero tienen diferencias importantes:
+                    </p>
+
+                    <div class="table-wrapper">
+                        <table class="table tabla-personalizada mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Aspecto</th>
+                                    <th>yarn.lock</th>
+                                    <th>package-lock.json</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><span>Formato y estructura</span></strong></td>
+                                    <td>Formato tipo <span>YALM</span>, más legible para humanos</td>
+                                    <td><span>JSON</span> estructurado jerárquicamente, más verboso</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><span>Gestión de dependencias</span></strong></td>
+                                    <td>Estructura plana, resuelve duplicados eficientemente</td>
+                                    <td>Árbol anidado que refleja node_modules con precisión</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container">
+                    <h2 class="mb-3 text-white">5 Comandos NPM Esenciales</h2>
+                    <p class="mb-3 text-white">
+                        Además de <span>npm init</span> y <span>npm install</span>, hay otros comandos esenciales como:
+                    </p>
+
+                    <div class="command-block mb-3">
+                        <h3 class="text-white mb-2">1. npm run [script]</h3>
+                        <div class="code-block p-3 mb-2"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm run dev</code>
+                        </div>
+                        <p class="text-white mb-0">Ejecuta scripts personalizados definidos en package.json. Es
+                            fundamental para automatizar tareas como desarrollo, construcción y testing.</p>
+                    </div>
+
+                    <div class="command-block mb-3">
+                        <h3 class="text-white mb-2">2. npm update</h3>
+                        <div class="code-block p-3 mb-2"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm update express</code>
+                        </div>
+                        <p class="text-white mb-0">Actualiza paquetes a sus versiones más recientes dentro de los rangos
+                            especificados en package.json. Mantiene las dependencias seguras y actualizadas.</p>
+                    </div>
+
+                    <div class="command-block mb-3">
+                        <h3 class="text-white mb-2">3. npm uninstall</h3>
+                        <div class="code-block p-3 mb-2"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm uninstall lodash</code>
+                        </div>
+                        <p class="text-white mb-0">Elimina paquetes del proyecto y los remueve de package.json. Ayuda a
+                            mantener el proyecto limpio sin dependencias innecesarias.</p>
+                    </div>
+
+                    <div class="command-block mb-3">
+                        <h3 class="text-white mb-2">4. npm audit</h3>
+                        <div class="code-block p-3 mb-2"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm audit fix</code>
+                        </div>
+                        <p class="text-white mb-0">Analiza las dependencias en busca de vulnerabilidades de seguridad
+                            conocidas y puede aplicar correcciones automáticamente.</p>
+                    </div>
+
+                    <div class="command-block mb-3">
+                        <h3 class="text-white mb-2">5. npm list</h3>
+                        <div class="code-block p-3 mb-2"
+                            style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm list --depth=0</code>
+                        </div>
+                        <p class="text-white mb-0">Muestra el árbol de dependencias instaladas. Útil para depurar
+                            conflictos de versiones y entender la estructura del proyecto.</p>
+                    </div>
+                </article>
+
+
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container">
+                    <h2 class="mb-3 text-white">Flags de NPM: -g, --save, -D</h2>
+
+                    <div class="command-block mb-3">
+                        <h3 class="mb-2 text-white">Flag -g (Global)</h3>
+                        <div class="code-block p-3 mb-2"
+                            style="background: rgba(0, 0, 0, 0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm install -g nodemon</code>
+                        </div>
+                        <p class="text-white mb-0">
+                            Instala paquetes de forma global en el sistema, disponibles desde cualquier directorio. Es
+                            ideal para herramientas CLI como <span>nodemon</span>, <span>prettier</span> o
+                            <span>create-react-app</span>.
+                        </p>
+                    </div>
+
+                    <div class="command-block mb-3">
+                        <h3 class="mb-2 text-white">Flag --save</h3>
+                        <div class="code-block p-3 mb-2"
+                            style="background: rgba(0, 0, 0, 0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm install --save express</code>
+                        </div>
+                        <p class="text-white mb-0">
+                            Guarda el paquete en las dependencias de producción dentro de <code>package.json</code>. A
+                            partir de npm 5+, este comportamiento ya es predeterminado.
+                        </p>
+                    </div>
+
+                    <div class="command-block mb-3">
+                        <h3 class="mb-2 text-white">Flag -D / --save-dev</h3>
+                        <div class="code-block p-3 mb-2"
+                            style="background: rgba(0, 0, 0, 0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                            <code>npm install -D jest</code>
+                        </div>
+                        <p class="text-white mb-0">
+                            Instala paquetes como dependencias de desarrollo. Estos son útiles para tareas como testing,
+                            análisis de código o bundling y no se incluyen en producción.
+                        </p>
+                    </div>
+                </article>
+
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container">
+                    <h2 class="mb-3 text-white">Módulos NPM esenciales</h2>
+                    <p class="text-white mb-4">Listado de módulos fundamentales para proyectos Node.js. Incluye tanto
+                        nativos como externos, para funciones como rutas, bases de datos, autenticación y más.</p>
+
+                    <div class="module-grid small-module-grid">
+                        <!-- Módulo -->
+                        <div class="module-item">
+                            <div class="module-name">express</div>
+                            <p>Framework web minimalista para crear servidores y APIs.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">mongodb</div>
+                            <p>Driver oficial para conectar y manejar MongoDB desde Node.js.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">mongoose</div>
+                            <p>ODM para MongoDB con validación y esquemas personalizados.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">path</div>
+                            <p>Módulo nativo para manipular rutas de archivos.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">router</div>
+                            <p>Enrutador modular para Express que organiza rutas complejas.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">nodemon</div>
+                            <p>Reinicia automáticamente el servidor al detectar cambios.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">cors</div>
+                            <p>Permite compartir recursos entre dominios (CORS).</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">http</div>
+                            <p>Módulo nativo para crear servidores y manejar peticiones HTTP.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">multer</div>
+                            <p>Manejo seguro de formularios y archivos en Express.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">morgan</div>
+                            <p>Middleware de logging para registrar peticiones HTTP.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">prettier</div>
+                            <p>Formateador de código que mantiene un estilo consistente.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">debug</div>
+                            <p>Herramienta para debugging condicional con variables de entorno.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">jade</div>
+                            <p>Motor de plantillas limpio (renombrado como Pug).</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">passport</div>
+                            <p>Autenticación con múltiples estrategias como OAuth.</p>
+                        </div>
+                    </div>
+                </article>
+
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container">
+                    <h2 class="mb-3 text-white">¿Existen paquetes para validar formularios y manejar archivos?</h2>
+                    <p class="text-white mb-3">
+                        Sí, existen múltiples paquetes en NPM para validar formularios y trabajar con archivos PDF o
+                        Excel.
+                    </p>
+
+                    <div class="module-grid small-module-grid">
+                        <div class="module-item">
+                            <div class="module-name">validator</div>
+                            <p>Valida cadenas como correos, URLs, fechas, etc. Ideal para formularios en backend.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">pdfkit</div>
+                            <p>Genera archivos PDF desde Node.js con estilos, textos e imágenes.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">exceljs</div>
+                            <p>Lee y escribe archivos Excel (.xlsx), útil para reportes y exportaciones.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">xlsx</div>
+                            <p>Transforma archivos Excel en estructuras JSON fácilmente.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container">
+                    <h2 class="mb-3 text-white">3 Módulos interesantes para probar</h2>
+
+                    <div class="module-grid small-module-grid">
+                        <div class="module-item">
+                            <div class="module-name">chalk</div>
+                            <p>Colorea la salida en consola. Útil para destacar logs o crear CLI visuales.</p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">dotenv</div>
+                            <p>Carga variables de entorno desde archivos `.env` para separar configuración del código.
+                            </p>
+                        </div>
+                        <div class="module-item">
+                            <div class="module-name">nodemailer</div>
+                            <p>Envía correos electrónicos desde Node.js. Compatible con SMTP, Gmail y más.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container">
+                    <h2 class="mb-3 text-white">¿Cómo se utiliza un módulo que ha sido instalado?</h2>
+                    <p class="text-white mb-3">Una vez instalado, se importa con <code>require()</code> o
+                        <code>import</code> dependiendo del entorno.</p>
+
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>const validator = require('validator');</code>
+                    </div>
+
+                    <p class="text-white mb-2">Luego puedes usarlo según su API. Ejemplo de validación de email:</p>
+
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>validator.isEmail('correo@ejemplo.com');</code>
+                    </div>
+                </article>
+
+                <div class="line-separate"></div>
+
+                <article class="articles-container">
+                    <h2 class="mb-3 text-white">¿Cómo indicar que un módulo es solo para desarrollo?</h2>
+                    <p class="text-white mb-3">Se utiliza el flag <code>-D</code> o <code>--save-dev</code> al
+                        instalarlo:</p>
+
+                    <div class="code-block p-3 mb-3"
+                        style="background: rgba(0,0,0,0.4); border-radius: 6px; border-left: 3px solid var(--span-color);">
+                        <code>npm install -D jest</code>
+                    </div>
+
+                    <p class="text-white mb-0">Esto lo agrega en <code>devDependencies</code>, lo cual evita su
+                        instalación en producción.</p>
+                </article>
+            </section>
+        </main>
+        <footer class="d-flex justify-content-end mt-4">
+            <button onclick="window.location.href='./index.html'" style="all: unset">
+                <div class="d-flex align-items-center gap-3 next-container glitch-container">
+                    <p> Inicio >></p>
+                </div>
+            </button>
+        </footer>
+    </div>
+
+    <script src="../assets/scripts/particles.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tabla-personalizada {
+  width: 95%;
+  border-collapse: collapse;
+  justify-self: center;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.54);
+}
+
+.tabla-personalizada th,
+.tabla-personalizada td {
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.753);
+  padding: 0.75rem;
+}
+
+.tabla-personalizada thead th {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.616);
+}
+
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.module-item {
+    background: rgba(65, 65, 65, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.module-item:hover {
+    border-color: var(--span-color);
+    background: rgba(65, 65, 65, 0.8);
+}
+
+.module-name {
+    color: var(--span-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.module-grid p {
+    font-size: 16px;
+}
+
+.small-module-grid .module-item {
+  padding: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.small-module-grid .module-name {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.next-container {
+    background: transparent;
+    width: fit-content;
+    color: rgb(217, 249, 255);
+    border: 1px solid #3ba2f6;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.glitch-container {
+    animation: glitch-pulse 3s infinite;
+}
+
+.glitch-container:hover {
+    background: rgba(59, 146, 246, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
